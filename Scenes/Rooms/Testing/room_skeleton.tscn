@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpn5moxtsvnsd"]
+
+[ext_resource type="Texture2D" uid="uid://bdhtroehj4155" path="res://Assets/Level Gen testing/Room_4.png" id="1_4bpcc"]
+[ext_resource type="Script" path="res://Scripts/Room.cs" id="1_wuune"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ihe8"]
+size = Vector2(16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f63c5"]
+load_path = "res://.godot/imported/testSquare.png-5bd96a894300abad84bfbaa48f7dc691.ctex"
+
+[node name="RoomSkeleton" type="Node2D"]
+script = ExtResource("1_wuune")
+
+[node name="RightCheck" type="RayCast2D" parent="."]
+position = Vector2(16, 0)
+target_position = Vector2(4, 0)
+collision_mask = 32768
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="LeftCheck" type="RayCast2D" parent="."]
+position = Vector2(-16, 0)
+target_position = Vector2(-4, 0)
+collision_mask = 32768
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="UpCheck" type="RayCast2D" parent="."]
+position = Vector2(0, -16)
+target_position = Vector2(0, -4)
+collision_mask = 32768
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="DownCheck" type="RayCast2D" parent="."]
+position = Vector2(0, 16)
+target_position = Vector2(0, 4)
+collision_mask = 32768
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4bpcc")
+
+[node name="GenerationCollision" type="Area2D" parent="."]
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GenerationCollision"]
+shape = SubResource("RectangleShape2D_2ihe8")
+
+[node name="RightCap" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RightCap"]
+position = Vector2(5, 0)
+scale = Vector2(0.375, 0.375)
+texture = SubResource("CompressedTexture2D_f63c5")
+
+[node name="LeftCap" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftCap"]
+position = Vector2(-5, 0)
+scale = Vector2(0.375, 0.375)
+texture = SubResource("CompressedTexture2D_f63c5")
+
+[node name="UpCap" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="UpCap"]
+position = Vector2(0, -5)
+scale = Vector2(0.375, 0.375)
+texture = SubResource("CompressedTexture2D_f63c5")
+
+[node name="DownCap" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="DownCap"]
+position = Vector2(0, 5)
+scale = Vector2(0.375, 0.375)
+texture = SubResource("CompressedTexture2D_f63c5")

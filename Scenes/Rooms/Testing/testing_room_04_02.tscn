@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://ouiuwo8ddesr"]
+
+[ext_resource type="Script" path="res://Scripts/Room.cs" id="1_nktci"]
+[ext_resource type="Texture2D" uid="uid://k2i2qr3vhdg1" path="res://Assets/Level Gen testing/Room_4_S.png" id="2_p1h65"]
+[ext_resource type="Texture2D" uid="uid://csmb2qkh45v62" path="res://Assets/testSquare.png" id="3_h3k65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ihe8"]
+size = Vector2(16, 16)
+
+[node name="RoomSkeleton" type="Node2D"]
+script = ExtResource("1_nktci")
+
+[node name="RightCheck" type="RayCast2D" parent="."]
+position = Vector2(16, 0)
+target_position = Vector2(4, 0)
+collision_mask = 32768
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="LeftCheck" type="RayCast2D" parent="."]
+position = Vector2(-16, 0)
+target_position = Vector2(-4, 0)
+collision_mask = 32768
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="UpCheck" type="RayCast2D" parent="."]
+position = Vector2(0, -16)
+target_position = Vector2(0, -4)
+collision_mask = 32768
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="DownCheck" type="RayCast2D" parent="."]
+position = Vector2(0, 16)
+target_position = Vector2(0, 4)
+collision_mask = 32768
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p1h65")
+
+[node name="GenerationCollision" type="Area2D" parent="."]
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GenerationCollision"]
+shape = SubResource("RectangleShape2D_2ihe8")
+
+[node name="RightCap" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RightCap"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(5, 0)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("3_h3k65")
+
+[node name="LeftCap" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftCap"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-5, 0)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("3_h3k65")
+
+[node name="UpCap" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="UpCap"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, -5)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("3_h3k65")
+
+[node name="DownCap" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="DownCap"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, 5)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("3_h3k65")

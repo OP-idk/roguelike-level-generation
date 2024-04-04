@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqmp3yllkasas"]
+
+[ext_resource type="PackedScene" uid="uid://3jdaaikiksk1" path="res://Scenes/level_generator.tscn" id="1_74yul"]
+[ext_resource type="Texture2D" uid="uid://vkrkl21uu150" path="res://icon.svg" id="2_0ccke"]
+
+[node name="GeneratorWorld" type="Node2D"]
+
+[node name="LevelGenerator" parent="." instance=ExtResource("1_74yul")]
+numberOfRooms = 30
+basicRooms = ["res://Scenes/Rooms/Testing/room_skeleton.tscn", "res://Scenes/Rooms/Testing/testing_room_03_01.tscn", "res://Scenes/Rooms/Testing/testing_room_03_02.tscn", "res://Scenes/Rooms/Testing/testing_room_03_03.tscn", "res://Scenes/Rooms/Testing/testing_room_03_04.tscn"]
+specialRooms = ["res://Scenes/Rooms/Testing/testing_room_04_02.tscn", "res://Scenes/Rooms/Testing/testing_room_04_02.tscn", "res://Scenes/Rooms/Testing/testing_room_04_02.tscn"]
+seedRooms = ["res://Scenes/Rooms/Testing/room_skeleton.tscn"]
+lootRooms = ["res://Scenes/Rooms/Testing/testing_room_04_03.tscn", "res://Scenes/Rooms/Testing/testing_room_04_03.tscn"]
+branches = [5, 10, 8]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-233, 3)
+texture = ExtResource("2_0ccke")

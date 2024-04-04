@@ -43,16 +43,13 @@ public partial class LevelGenerator : Node2D
     public override void _Ready()
     {
         generateRoomList();
-        
+        // NEXT: Put stuff in other files too
     }
     
     public override void _Process(double delta)
     {
         switch (progress)
         {
-            case generationProgress.Done:
-                SetProcess(false);
-                break;
             case generationProgress.Main:
                 
                 // initial seed
@@ -91,6 +88,7 @@ public partial class LevelGenerator : Node2D
                     room.generateCaps();
                 }
                 progress = generationProgress.Done;
+                //SetProcess(false);
                 break;
 
         }

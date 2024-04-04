@@ -4,6 +4,9 @@ using System.Runtime.CompilerServices;
 
 public partial class Room : Node2D
 {
+    // TODO: Do stuff
+    // BUG: OH GOD EVERYTHGH+IUNG"S ONB FIRE
+    // HACK: I mean it works ig
     [Export]
     bool rightCheckEnabled = true;
     [Export]

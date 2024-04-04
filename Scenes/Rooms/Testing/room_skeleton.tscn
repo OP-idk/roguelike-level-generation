@@ -7,7 +7,6 @@
 size = Vector2(16, 16)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f63c5"]
-load_path = "res://.godot/imported/testSquare.png-5bd96a894300abad84bfbaa48f7dc691.ctex"
 
 [node name="RoomSkeleton" type="Node2D"]
 script = ExtResource("1_wuune")

@@ -31,6 +31,10 @@ window/vsync/vsync_mode=3
 
 project/assembly_name="No Way In Hell"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
 [filesystem]
 
 import/blender/enabled=false
